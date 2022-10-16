@@ -1,0 +1,25 @@
+@host = localhost
+@port = 3333
+@baseUrl = {{host}}:{{port}}
+@client_id = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+@accessToken = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+@contentType = application/json
+
+
+GET http://{{baseUrl}} HTTP/1.1
+# Header: Host
+# Content-Type: {{contentType}}
+## Authorization: token xxx
+######
+
+GET http://{{baseUrl}}/hello HTTP/1.1
+# Header: Host
+# Content-Type: {{contentType}}
+## Authorization: token xxx
+######
+
+GET http://{{baseUrl}}/error HTTP/1.1
+# Header: Host
+# Content-Type: {{contentType}}
+## Authorization: token xxx
+######

@@ -1,0 +1,52 @@
+@host = localhost
+@port = 3333
+
+@baseUrl = {{host}}:{{port}}
+@client_id = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+@accessToken = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+@contentType = application/json
+
+# Register
+POST http://{{baseUrl}}/register  HTTP/1.1
+Content-Type: application/json
+## Authorization: token {{client_id}}
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+
+{
+    "name": "Fernando",
+    "email": "u@h.com"
+}
+########
+#,
+#    "password": "p1p2p3p4p5"
+
+# SignIn
+POST http://{{baseUrl}}/login  HTTP/1.1
+Content-Type: application/json
+## Authorization: token {{client_id}}
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+
+{
+    "email": "u@h.com",
+    "password": "p1p2p3p4p5"
+}
+########
+
+# SignOut
+POST http://{{baseUrl}}/logout  HTTP/1.1
+Content-Type: application/json
+## Authorization: token {{client_id}}
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+
+{
+    "email": "u@h.com"
+}
+
+########
+
+
+
+

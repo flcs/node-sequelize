@@ -7,7 +7,11 @@ const ReportController = require('./controllers/ReportController');
 
 const routes = express.Router();
 
+routes.get('/', (req, res) => res.json({ msg: 'ok'}));
+routes.get('/error', (req, res) => res.send('erro'));
+
 routes.get('/users', UserController.index);
+routes.get('/users/:user_id', UserController.findById);
 routes.post('/users', UserController.store);
 
 routes.get('/users/:user_id/addresses', AddressController.index);

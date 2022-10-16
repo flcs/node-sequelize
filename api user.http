@@ -1,0 +1,65 @@
+@host = localhost
+@port = 3333
+@chave = users
+
+@baseUrl = {{host}}:{{port}}
+@client_id = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+@accessToken = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+@contentType = application/json
+
+GET http://{{baseUrl}}/{{chave}} HTTP/1.1
+# Header: Host
+# Content-Type: {{contentType}}
+## Authorization: token xxx
+######
+
+GET http://{{baseUrl}}/{{chave}}/1 HTTP/1.1
+# Header: Host
+# Content-Type: {{contentType}}
+## Authorization: token xxx
+######
+
+
+# CREATE
+POST http://{{baseUrl}}/{{chave}}  HTTP/1.1
+Content-Type: application/json
+## Authorization: token {{client_id}}
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+
+{
+    "name": "Fernando"
+}
+########
+
+PUT http://{{baseUrl}}/{{chave}}/1  HTTP/1.1
+Content-Type: application/json
+## Authorization: token {{client_id}}
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+{
+    "name": "Fernando"
+}
+########
+
+PATCH http://{{baseUrl}}/{{chave}}/1  HTTP/1.1
+Content-Type: application/json
+## Authorization: token {{client_id}}
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+{
+    "name": "Fernando"
+}
+########
+
+DELETE http://{{baseUrl}}/{{chave}}/1  HTTP/1.1
+Content-Type: application/json
+## Authorization: token {{client_id}}
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+########
+
+
+
+
+

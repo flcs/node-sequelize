@@ -1,11 +1,19 @@
-const Sequelize = require('sequelize');
+const  Sequelize = require('sequelize');
 const dbConfig = require('../config/database');
 
 const User = require('../models/User');
 const Address = require('../models/Address');
 const Tech = require('../models/Tech');
 
-const connection = new Sequelize(dbConfig);
+let connection = null;
+try {
+    connection = new Sequelize(dbConfig);
+    // connection = new Sequelize(dbUrl);
+} catch (err) {
+    console.log("erro conectando ao banco");
+    console.log(err);
+}
+// console.log(connection);
 
 User.init(connection);
 Address.init(connection);
